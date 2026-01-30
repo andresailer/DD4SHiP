@@ -290,7 +290,7 @@ SIM.meta.runNumberOffset = 0
 SIM.output.inputStage = 3
 
 ## Output level for Geant4 kernel
-SIM.output.kernel = 3
+SIM.output.kernel = 1
 
 ## Output level for ParticleHandler
 SIM.output.part = 3
@@ -298,6 +298,7 @@ SIM.output.part = 3
 ## Output level for Random Number Generator setup
 SIM.output.random = 6
 
+SIM.output.physics = 0
 
 ################################################################################
 ## Configuration for Output Files. 
@@ -362,7 +363,7 @@ SIM.part.printStartTracking = False
 SIM.part.saveProcesses = ['Decay']
 
 ## Optionally enable an extended Particle Handler
-SIM.part.userParticleHandler = "Geant4TCUserParticleHandler"
+SIM.part.userParticleHandler = ""
 
 
 ################################################################################

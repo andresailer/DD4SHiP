@@ -30,13 +30,13 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
   std::string  nam     = x_det.nameStr();
   //vertical bars by default
 //  const double splitlayer   =  x_det.attr<int>("splitlayer");
-  const double widebar_x_spacing   =  x_widebar.attr<double>("x_extra_spacing");
-  const double thinbar_x_spacing   =  x_thinbar.attr<double>("x_extra_spacing");
-  const double extrazgap   =  x_widebar.attr<double>("extrazgap");
-  const std::string calo_layer_codes = x_det.attr<std::string>("layer_codes");
+  const double widebar_x_spacing   =  x_widebar.attr<double>(_Unicode(x_extra_spacing));
+  const double thinbar_x_spacing   =  x_thinbar.attr<double>(_Unicode(x_extra_spacing));
+  const double extrazgap   =  x_widebar.attr<double>(_Unicode(extrazgap));
+  const std::string calo_layer_codes = x_det.attr<std::string>(_Unicode(layer_codes));
   const int num_z   =  static_cast<unsigned>(calo_layer_codes.size()); 
-  const int widebar_num_x   =  x_widebar.attr<unsigned>("num_x");
-  const int thinbar_num_x   =  x_thinbar.attr<unsigned>("num_x");
+  const int widebar_num_x   =  x_widebar.attr<unsigned>(_Unicode(num_x));
+  const int thinbar_num_x   =  x_thinbar.attr<unsigned>(_Unicode(num_x));
 
   //HPL fibre feature extraction 
   xml_dim_t    x_hplbox   = x_det.child(_Unicode(hplbox));
@@ -47,7 +47,7 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
   const int    hplnum_x   = int(x_hplbox.x() / hpldelta);
   const int    hplnum_x_small = hplnum_x - 1;
 //  const int    num_z   = int(2e0*x_box.z() / (delta+2*tol));
-  const double hplnum_z   =  x_det.attr<int>("hpln_fibre_layers");
+  const double hplnum_z   =  x_det.attr<int>(_Unicode(hpln_fibre_layers));
   
   
   //HPL definition

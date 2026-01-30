@@ -27,12 +27,12 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
   xml_det_t    x_split = x_det.child(_Unicode(split));
   std::string  nam     = x_det.nameStr();
   //vertical bars by default
-  const double x_spacing   =  x_bar.attr<double>("x_spacing");
+  const double x_spacing   =  x_bar.attr<double>(_Unicode(x_spacing));
   const double z_spacing   = 2*(x_bar.z()+x_passive_layer.z());  
-  const double splitlayer   =  x_bar.attr<int>("splitlayer");
-  const double extrazgap   =  x_bar.attr<double>("extrazgap");
-  const int num_z   =  x_bar.attr<int>("num_z");
-  const int num_x   =  x_bar.attr<int>("num_x");
+  const double splitlayer   =  x_bar.attr<int>(_Unicode(splitlayer));
+  const double extrazgap   =  x_bar.attr<double>(_Unicode(extrazgap));
+  const int num_z   =  x_bar.attr<int>(_Unicode(num_z));
+  const int num_x   =  x_bar.attr<int>(_Unicode(num_x));
   Box   bar(x_bar.x()-tol, x_bar.y()-tol,(x_bar.z()-tol)/2.);
   Box   passive_layer_box(x_passive_layer.x()-tol, x_passive_layer.y()-tol,(x_passive_layer.z()-tol)/2.);
   Volume bar_vol("bar", bar, description.material(x_bar.materialStr()));

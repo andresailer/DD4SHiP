@@ -36,7 +36,7 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
   const int    num_x   = int(2e0*x_box.x() / delta);
   const int    num_x_small = num_x - 1;
 //  const int    num_z   = int(2e0*x_box.z() / (delta+2*tol));
-  const double num_z   =  x_det.attr<int>("n_fibre_layers");
+  const double num_z   =  x_det.attr<int>(_Unicode(n_fibre_layers));
   Tube   fibre(0., x_fibre.rmax()-tol, x_fibre.y()-tol);
   Volume fibre_vol("fibre", fibre, description.material(x_fibre.materialStr()));
   fibre_vol.setAttributes(description, x_fibre.regionStr(), x_fibre.limitsStr(), x_fibre.visStr());

@@ -25,11 +25,11 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
   xml_det_t    x_bar = x_det.child(_Unicode(bar));
   std::string  nam     = x_det.nameStr();
   //vertical bars by default
-  const double spacing   =  x_bar.attr<int>("spacing");
+  const double spacing   =  x_bar.attr<int>(_Unicode(spacing));
   //const int    num_x   =static_cast<int>(x_bar.y()/x_bar.x());
 //  const int    num_x   = x_bar.num_x();
 //  const int    num_x   = x_det.child(_Unicode(num_x))
-  const int num_x = x_bar.attr<int>("num_x");
+  const int num_x = x_bar.attr<int>(_Unicode(num_x));
   Box   bar(x_bar.x()-tol, x_bar.y()-tol,x_bar.z()-tol);
   Volume bar_vol("bar", bar, description.material(x_bar.materialStr()));
   bar_vol.setAttributes(description, x_bar.regionStr(), x_bar.limitsStr(), x_bar.visStr());
