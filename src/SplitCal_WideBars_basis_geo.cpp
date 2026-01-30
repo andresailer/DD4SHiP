@@ -119,6 +119,7 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
 	    	rot_layers = RotationZYX(M_PI/2e0,0e0,0e0);
 		//Order of offets To be tested
     	    	PlacedVolume pv_det = detbox_vol.placeVolume(det_wide_layerbox_vol, Transform3D(rot_layers,Position(x_offset,y_offset,z_layer)));
+                std::cout << "Building layer case 1   " << iz  << std::endl;
     	    	pv_det.addPhysVolID("splitcal_layer", iz);
     		//z_layer += x_widebar.z()+x_passive_layer.z();
     		z_layer += x_widebar.z()/2.;
@@ -130,6 +131,7 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
 		rot_layers = RotationZYX(0e0, 0e0, 0e0);
 		//Order of offets To be tested
     		PlacedVolume pv_det = detbox_vol.placeVolume(det_wide_layerbox_vol, Transform3D(rot_layers,Position(x_offset,y_offset,z_layer)));
+                std::cout << "Building layer case 2   " << iz  << std::endl;
         	pv_det.addPhysVolID("splitcal_layer", iz);
     		//z_layer += x_widebar.z()+x_passive_layer.z();
     		z_layer += x_widebar.z()/2.;
